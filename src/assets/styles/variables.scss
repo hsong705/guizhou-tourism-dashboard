@@ -1,0 +1,87 @@
+// ===== 贵州省旅游数智互联平台暨旅游驾驶舱 - 变量定义 =====
+
+// 颜色
+$bg-primary: #0a1a3a;
+$bg-panel: rgba(6, 30, 65, 0.85);
+$border-main: rgba(44, 146, 255, 0.4);
+$border-glow: rgba(44, 146, 255, 0.15);
+$accent-blue: #2c92ff;
+$accent-cyan: #00e4ff;
+$accent-yellow: #ffc53d;
+$accent-green: #36d7a0;
+$accent-red: #ff6b6b;
+$accent-purple: #a855f7;
+$text-primary: #d4e5ff;
+$text-secondary: rgba(160, 195, 255, 0.6);
+$text-white: #ffffff;
+
+// 字体
+$font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 28px;
+$font-size-xxl: 40px;
+
+// 间距
+$gap-sm: 8px;
+$gap-md: 12px;
+$gap-lg: 20px;
+
+// 面板
+$panel-padding: 16px;
+$panel-border-radius: 4px;
+
+// 混入
+@mixin panel-box {
+  background: $bg-panel;
+  border: 1px solid $border-main;
+  border-radius: $panel-border-radius;
+  padding: $panel-padding;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid $accent-cyan;
+    border-left: 2px solid $accent-cyan;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid $accent-cyan;
+    border-right: 2px solid $accent-cyan;
+  }
+}
+
+@mixin panel-title {
+  font-size: $font-size-md;
+  color: $accent-cyan;
+  font-weight: bold;
+  margin-bottom: $gap-md;
+  padding-left: 10px;
+  border-left: 3px solid $accent-cyan;
+}
+
+@mixin number-highlight {
+  font-size: $font-size-xxl;
+  font-weight: bold;
+  color: $accent-yellow;
+  font-family: 'DIN Alternate', 'Impact', sans-serif;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
